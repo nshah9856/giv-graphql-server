@@ -6,8 +6,11 @@ var schema = buildSchema(`
     type Query {
         organization(id: Int!): Organization
         organizations(id: Int): [Organization]
-        user(username: String) : User
+        user(email: String) : User
         users(id: Int): [User]
+    },
+    type Mutation {
+        createUser(email: String!, password: String!): User
     },
     type Organization {
         id: Int
@@ -19,7 +22,7 @@ var schema = buildSchema(`
     type User{
         id: Int
         name: String
-        username: String
+        email: String
         password: String
         creditCardNumber: String
         creditCardExp: String
@@ -54,10 +57,19 @@ var userData = [
     {
         id: 1,
         name: "Lucas Erb",
-        username: "lerb",
+        email: "lerb@erb.com",
         password: "test",
     }
 ]
+
+var createUserAccount = function({email, password}){
+    userData.push( 
+        {
+        email: email,
+        password: password,
+    })
+    return userData[userData.length-1]
+}
 var getOrganization = function(args) { 
     var id = args.id;
     return organizationData.filter(org => {
@@ -65,9 +77,9 @@ var getOrganization = function(args) {
     })[0];
 }
 var getUser = function(args) { 
-    var username = args.username;
+    var email = args.email;
     return userData.filter(user => {
-        return user.username == username;
+        return user.email == email;
     })[0];
 }
 var getOrganizations = function(args) {
@@ -80,7 +92,8 @@ var root = {
     organization: getOrganization,
     organizations: getOrganizations,
     user: getUser,
-    users: getUsers
+    users: getUsers,
+    createUser: createUserAccount
 };
 // Create an express server and a GraphQL endpoint
 var app = express();
