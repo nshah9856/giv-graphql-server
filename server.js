@@ -6,6 +6,8 @@ var schema = buildSchema(`
     type Query {
         organization(id: Int!): Organization
         organizations(id: Int): [Organization]
+        user(id: Int!) : User
+        users(id: Int): [User]
     },
     type Organization {
         id: Int
@@ -14,6 +16,15 @@ var schema = buildSchema(`
         description: String
         category: String
         url: String
+    }
+    type User{
+        id: Int
+        name: String
+        username: String
+        password: String
+        creditCardNumber: String
+        creditCardExp: String
+        creditCardCvv: String
     }
 `);
 var organizationData = [
@@ -42,18 +53,38 @@ var organizationData = [
         url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'
     }
 ]
+
+var userData = [
+    {
+        id: 1,
+        name: "Lucas Erb",
+        username: "lerb",
+        password: "test",
+    }
+]
 var getOrganization = function(args) { 
     var id = args.id;
-    return organizationData.filter(course => {
-        return course.id == id;
+    return organizationData.filter(org => {
+        return org.id == id;
+    })[0];
+}
+var getUser = function(args) { 
+    var id = args.id;
+    return userData.filter(user => {
+        return user.id == id;
     })[0];
 }
 var getOrganizations = function(args) {
     return organizationData;
 }
+var getUsers = function(args) {
+    return userData;
+}
 var root = {
     organization: getOrganization,
-    organizations: getOrganizations
+    organizations: getOrganizations,
+    user: getUser,
+    users: getUsers
 };
 // Create an express server and a GraphQL endpoint
 var app = express();
