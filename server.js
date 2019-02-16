@@ -12,7 +12,6 @@ var schema = buildSchema(`
     type Organization {
         id: Int
         title: String
-        author: String
         description: String
         category: String
         url: String
@@ -30,27 +29,24 @@ var schema = buildSchema(`
 var organizationData = [
     {
         id: 1,
-        title: 'The Complete Node.js Developer Course',
-        author: 'Andrew Mead, Rob Percival',
-        description: 'Learn Node.js by building real-world applications with Node, Express, MongoDB, Mocha, and more!',
-        category: 'Node.js',
-        url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'
+        title: 'World Vision',
+        description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
+        category: 'health',
+        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4'
     },
     {
         id: 2,
-        title: 'Node.js, Express & MongoDB Dev to Deployment',
-        author: 'Brad Traversy',
-        description: 'Learn by example building & deploying real-world Node.js applications from absolute scratch',
-        category: 'Node.js',
-        url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'
+        title: 'World Vision',
+        description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
+        category: 'health',
+        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4'
     },
     {
         id: 3,
-        title: 'JavaScript: Understanding The Weird Parts',
-        author: 'Anthony Alicea',
-        description: 'An advanced JavaScript course for everyone! Scope, closures, prototypes, this, build your own framework, and more.',
-        category: 'JavaScript',
-        url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'
+        title: 'World Vision',
+        description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
+        category: 'health',
+        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4'
     }
 ]
 
