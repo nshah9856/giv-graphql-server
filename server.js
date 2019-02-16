@@ -6,7 +6,7 @@ var schema = buildSchema(`
     type Query {
         organization(id: Int!): Organization
         organizations(id: Int): [Organization]
-        user(id: Int!) : User
+        user(username: String) : User
         users(id: Int): [User]
     },
     type Organization {
@@ -65,9 +65,9 @@ var getOrganization = function(args) {
     })[0];
 }
 var getUser = function(args) { 
-    var id = args.id;
+    var username = args.username;
     return userData.filter(user => {
-        return user.id == id;
+        return user.username == username;
     })[0];
 }
 var getOrganizations = function(args) {
