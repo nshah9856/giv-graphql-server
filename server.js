@@ -103,7 +103,9 @@ var updateUserAccount = function({email, tempOrg}){
 
     userData[index].tempOrg = tempOrg
 
-    userData[index].likedOrgs.push(tempOrg)
+    var i = userData[index].likedOrgs.indexOf(tempOrg)
+    if (i < 0)
+        userData[index].likedOrgs.push(tempOrg)
     
     return userData[index];
 }
