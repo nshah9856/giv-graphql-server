@@ -1,6 +1,7 @@
 var express = require('express');
 var express_graphql = require('express-graphql');
 var { buildSchema } = require('graphql');
+
 // GraphQL schema
 var schema = buildSchema(`
     type Query {
@@ -36,27 +37,43 @@ var schema = buildSchema(`
 var organizationData = [
     {
         id: 1,
-        title: 'World Vision',
-        description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
-        category: 'health',
-        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4',
-        website: 'https://donate.worldvision.org/give/hand-drilled-well*'
+        title: 'Doctors Without Borders',
+        description: 'See how Doctors Without Borders/Médecins Sans Frontières (MSF) has provided more than one million medical consultations to Rohingya refugees in Bangladesh… Now, after fighting disease outbreaks, providing reproductive health care, treatment for sexual violence, mental health services, and more, MSF has surpassed one million medical consultations in the camps.',
+        category: 'World Health & Medicine',
+        url: 'https://storage.googleapis.com/sharity-video/doctorswithoutborders.mp4',
+        website: 'https://www.doctorswithoutborders.org/'
     },
     {
         id: 2,
-        title: 'World Vision',
-        description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
-        category: 'health',
-        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4',
-        website: 'https://donate.worldvision.org/give/hand-drilled-well*'
+        title: 'World Wildlife Fund',
+        description: 'We can\'t survive without nature, and nature can\'t survive without us. That\'s why we\'re so grateful to have you by our side as a champion for nature. When we all come together to protect forests, oceans, rivers, and streams, we protect life on our planet for generations to come.',
+        category: 'Nature Preservation',
+        url: 'https://storage.googleapis.com/sharity-video/wwf.mp4',
+        website: 'https://www.worldwildlife.org/'
     },
     {
         id: 3,
-        title: 'World Vision',
-        description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
-        category: 'health',
-        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4',       
-        website: 'https://donate.worldvision.org/give/hand-drilled-well*'
+        title: 'World Food Program',
+        description: 'The World Food Programme\'s long experience in humanitarian and development contexts has positioned the organization well to support resilience building in order to improve food security and nutrition. WFP helps the most vulnerable people strengthen their capacities to absorb, adapt, and transform in the face of shocks and long-term stressors.',
+        category: 'World Hunger',
+        url: 'https://storage.googleapis.com/sharity-video/worldfoodprogramme.mp4',       
+        website: 'https://www1.wfp.org/'
+    },
+    {
+        id: 4,
+        title: 'Samaritan’s Purse',
+        description: 'For over 40 years, Samaritan’s Purse has done our utmost to follow Christ’s command by going to the aid of the world’s poor, sick, and suffering. We are an effective means of reaching hurting people in countries around the world with food, medicine, and other assistance in the Name of Jesus Christ.',
+        category: 'World Health and Medicine',
+        url: 'https://storage.googleapis.com/sharity-video/samaritanspurse.mp4',       
+        website: 'https://www.samaritanspurse.org/'
+    },
+    {
+        id: 5,
+        title: 'Make A Wish',
+        description: 'Tens of thousands of volunteers, donors and supporters advance the Make-A-Wish® vision to grant the wish of every child diagnosed with a critical illness. In the United States and its territories, on average, a wish is granted every 34 minutes. We believe a wish experience can be a game-changer. This one belief guides us and inspires us to grant wishes that change the lives of the kids we serve.',
+        category: 'Domestic Health',
+        url: 'https://storage.googleapis.com/sharity-video/makeawish.mp4',       
+        website: 'https://wish.org/'
     }
 ]
 
