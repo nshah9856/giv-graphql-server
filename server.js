@@ -17,6 +17,7 @@ var schema = buildSchema(`
         title: String
         description: String
         category: String
+        website : String
         url: String
     }
     type User{
@@ -35,21 +36,24 @@ var organizationData = [
         title: 'World Vision',
         description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
         category: 'health',
-        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4'
+        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4',
+        website: 'https://donate.worldvision.org/give/hand-drilled-well*'
     },
     {
         id: 2,
         title: 'World Vision',
         description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
         category: 'health',
-        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4'
+        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4',
+        website: 'https://donate.worldvision.org/give/hand-drilled-well*'
     },
     {
         id: 3,
         title: 'World Vision',
         description: 'Your gift is a sacred trust. We promise to honor your generosity and use your donation in the most effective way possible. The gift options shown reflect World Vision projects and the suggested donation amounts are based on periodic surveys of the countries we serve. ',
         category: 'health',
-        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4'
+        url: 'https://storage.googleapis.com/sharity-video/worldvision.mp4',       
+        website: 'https://donate.worldvision.org/give/hand-drilled-well*'
     }
 ]
 
