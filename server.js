@@ -76,6 +76,7 @@ var createUserAccount = function({email, password}){
         {
         email: email,
         password: password,
+        likedOrgs: [],
     })
     return userData[userData.length-1]
 }
